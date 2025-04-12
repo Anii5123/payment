@@ -1,0 +1,44 @@
+<div class="bill-page">
+  <h2>Bills</h2>
+
+  <!-- Bills List -->
+  <div class="bill-list">
+    <div class="bill-row header">
+      <span>Order ID</span>
+      <span>Payment ID</span>
+      <span>Amount</span>
+      <span>Date</span>
+    </div>
+    <button
+      class="bill-row"
+      *ngFor="let bill of bills"
+      (click)="selectBill(bill)"
+      (keydown)="handleKeyDown($event, bill)"
+    >
+      <span>{{ bill.orderId }}</span>
+      <span>{{ bill.paymentId }}</span>
+      <span>₹{{ bill.amount.toFixed(2) }}</span>
+      <span>{{ bill.date | date: 'short' }}</span>
+    </button>
+  </div>
+
+  <!-- Bill Details -->
+  <div class="bill-details" *ngIf="selectedBill">
+    <h3>Bill Details</h3>
+    <p><strong>Order ID:</strong> {{ selectedBill.orderId }}</p>
+    <p><strong>Payment ID:</strong> {{ selectedBill.paymentId }}</p>
+    <p><strong>Amount:</strong> ₹{{ selectedBill.amount.toFixed(2) }}</p>
+    <p><strong>Bill Date:</strong> {{ selectedBill.date | date: 'fullDate' }}</p>
+
+    <h4>Order Info</h4>
+    <ul>
+      <li *ngFor="let item of selectedBill.items">
+        {{ item.name }} — Qty: {{ item.quantity }} x ₹{{ item.price.toFixed(2) }}
+      </li>
+    </ul>
+
+    <button (click)="downloadBill()" class="btn download">
+      Download Bill PDF
+    </button>
+  </div>
+</div>

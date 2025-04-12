@@ -2,6 +2,10 @@
 
 npm install --save-dev @types/googlepay
 
+## download bills in pdf
+
+npm install jspdf
+
 ## Pay
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.

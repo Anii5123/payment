@@ -83,5 +83,12 @@ export const routes: Routes = [
     loadComponent: () =>import('./pages/online-payment/online-payment.component').then(
       (m) => m.OnlinePayComponent,
     ),
+  },
+  {
+    path: 'bill',
+    loadComponent: () =>import('./pages/bill/bill.component').then(
+      (m) => m.BillPageComponent,
+    ),
   }
+
 ];
