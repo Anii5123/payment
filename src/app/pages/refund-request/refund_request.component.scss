@@ -1,0 +1,132 @@
+.refund-container {
+    padding: 2rem;
+    color: #111;
+    max-width: 700px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+  
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+  
+    .form-section, .status-section, .success-section {
+      margin-bottom: 2rem;
+    }
+  
+    .card {
+      background-color: #f5f7ff;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      border: 1px solid #e0e7ff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  
+    input {
+      display: block;
+      width: 100%;
+      padding: 0.6rem;
+      margin: 0.6rem 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+  
+    .otp-btn, .submit-btn, .home-btn {
+      display: inline-block;
+      background-color: #4f46e5;
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
+    }
+  
+    .otp-btn:hover,
+    .submit-btn:hover,
+    .home-btn:hover {
+      background-color: #3730a3;
+    }
+  
+    .timeline {
+      list-style: none;
+      padding-left: 1rem;
+  
+      li {
+        position: relative;
+        padding-left: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      li::before {
+        content: '●';
+        color: #4f46e5;
+        position: absolute;
+        left: 0;
+        font-size: 0.9rem;
+        top: 0.2rem;
+      }
+    }
+  
+    .help-link {
+      text-align: center;
+      margin-top: 2rem;
+  
+      a {
+        text-decoration: none;
+        color: #4f46e5;
+        font-weight: 500;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+    .error-message {
+        color: red;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+    .success-message {
+        color: green;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+    .status-message {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+    .status-message span {
+        font-weight: bold;
+    }
+    .status-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .status-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .status-section p {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .status-section .status-message {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    

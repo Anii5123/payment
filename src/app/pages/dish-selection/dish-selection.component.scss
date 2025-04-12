@@ -1,0 +1,50 @@
+.menu-container {
+    padding: 20px;
+  }
+  
+  .categories {
+    margin-bottom: 20px;
+  }
+  
+  .categories button {
+    margin: 0 10px 10px 0;
+    padding: 10px 15px;
+    border: none;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .categories button.active {
+    background-color: #4f46e5;
+    color: white;
+  }
+  
+  .dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .dish-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dish-card h3 {
+    margin: 10px 0;
+  }
+  
+  .dish-card button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

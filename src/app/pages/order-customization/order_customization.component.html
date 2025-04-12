@@ -1,0 +1,53 @@
+<div class="customization-page">
+    <div class="customization-container">
+      <div class="details-section">
+        <h2>Margherita Pizza <span class="price">${{ selectedSize.price }}</span></h2>
+        <p class="desc">Classic Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.</p>
+  
+        <h3>Size</h3>
+        <div class="options-row">
+          <label *ngFor="let size of sizes" class="option-card">
+            <input type="radio" name="size" [value]="size" [(ngModel)]="selectedSize" />
+            {{ size.name }}<br />
+            <small>${{ size.price }}</small>
+          </label>
+        </div>
+  
+        <h3>Crust</h3>
+        <div class="options-row">
+          <label *ngFor="let crust of crusts" class="option-card">
+            <input type="radio" name="crust" [value]="crust" [(ngModel)]="selectedCrust" />
+            {{ crust }} <br />
+            <small *ngIf="crust === 'Stuffed'">+ $2.00</small>
+          </label>
+        </div>
+  
+        <h3>Extra Toppings</h3>
+        <div class="toppings-list">
+          <label *ngFor="let topping of toppings">
+            <input type="checkbox" [(ngModel)]="topping.selected" />
+            {{ topping.name }} - ${{ topping.price }}
+          </label>
+        </div>
+  
+        <h3>Special Instructions</h3>
+        <textarea [(ngModel)]="instructions" placeholder="Add any special instructions..."></textarea>
+  
+        <div class="quantity-control">
+          <h3>Quantity</h3>
+          <div class="counter">
+            <button (click)="removeQuantity()">-</button>
+            <span>{{ quantity }}</span>
+            <button (click)="addQuantity()">+</button>
+          </div>
+        </div>
+  
+        <div class="total-row">
+          <span>Total: ${{ total.toFixed(2) }}</span>
+        </div>
+  
+        <button class="add-btn" (click)="addToOrder()">Add to Order</button>
+      </div>
+    </div>
+  </div>
+  

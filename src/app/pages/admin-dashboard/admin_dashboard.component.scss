@@ -1,0 +1,112 @@
+.dashboard-container {
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  
+    .heading {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .cards {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+  
+      .card {
+        flex: 1;
+        background: #f5f5ff;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #eee;
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+        p {
+          color: #777;
+          margin-bottom: 1rem;
+        }
+        button {
+          background: #7f56d9;
+          color: white;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .section {
+      margin-top: 2rem;
+  
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        th,
+        td {
+          padding: 0.75rem;
+          text-align: left;
+          border-bottom: 1px solid #ccc;
+        }
+  
+        .icon {
+          cursor: pointer;
+          margin-right: 0.5rem;
+        }
+      }
+  
+      .payment-graph {
+        width: 100%;
+        max-width: 500px;
+        margin: 1rem auto;
+        display: block;
+      }
+  
+      .activities {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          display: flex;
+          align-items: center;
+          padding: 1rem 0;
+          border-bottom: 1px solid #ddd;
+  
+          .avatar {
+            width: 40px;
+            height: 40px;
+            background: #e5e5ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+          }
+  
+          .icon {
+            margin-left: auto;
+            cursor: pointer;
+          }
+  
+          .time {
+            color: #888;
+          }
+          .section {
+            transition: all 0.3s ease-in-out;
+          }
+          
+          
+        }
+      }
+    }
+    
+  }
+  

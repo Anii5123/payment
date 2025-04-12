@@ -1,0 +1,20 @@
+<div class="menu-container">
+    <h2>Explore Our Menu</h2>
+  
+    <div class="categories">
+      <button *ngFor="let category of categories"
+              [class.active]="category === selectedCategory"
+              (click)="selectedCategory = category">
+        {{ category }}
+      </button>
+    </div>
+  
+    <div class="dishes-grid">
+      <div class="dish-card" *ngFor="let dish of dishes">
+        <h3>{{ dish.name }}</h3>
+        <p>${{ dish.price }}</p>
+        <button (click)="addToOrder(dish)">Add to Order</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,61 @@
+<div class="employee-dashboard">
+    <h2>Employee Dashboard</h2>
+  
+    <!-- Tabs -->
+    <div class="tabs">
+      <button *ngFor="let tab of tabs; let i = index"
+              (click)="changeTab(i)"
+              [ngClass]="{ active: selectedTab === tabKeys[i] }">
+        {{ tab }}
+      </button>
+    </div>
+  
+    <!-- Assigned Orders Table -->
+    <div class="assigned-orders">
+      <div class="order-row header">
+        <span>Order ID</span>
+        <span>Address</span>
+        <span>Payment</span>
+        <span>Amount</span>
+      </div>
+      <div class="order-row" *ngFor="let order of filteredOrders" (click)="selectOrder(order)">
+        <span>#{{ order.id }}</span>
+        <span>{{ order.address }}</span>
+        <span>{{ order.paymentMode }}</span>
+        <span>\${{ order.amount.toFixed(2) }}</span>
+      </div>
+    </div>
+  
+    <!-- Order Details Section -->
+    <div class="order-details" *ngIf="selectedOrder">
+      <h3>Order #{{ selectedOrder.id }}</h3>
+      <p><strong>Delivery Address:</strong> {{ selectedOrder.address }}</p>
+      <p><strong>Payment mode:</strong> {{ selectedOrder.paymentMode }}</p>
+      <p><strong>Bill amount:</strong> \${{ selectedOrder.amount.toFixed(2) }}</p>
+  
+      <button class="btn mark" *ngIf="selectedOrder.status === 'active'" (click)="markAsDelivered(selectedOrder.id)">Mark as Delivered</button>
+      <button class="btn view" (click)="viewDetails(selectedOrder.id)">View Details</button>
+  
+      <!-- Payment + Notes -->
+      <div class="order-actions">
+        <div class="card">
+          <h4>Payment Collection</h4>
+          <p>Please collect \${{ selectedOrder.amount.toFixed(2) }} from the customer before handing over the order.</p>
+          <button class="btn confirm" (click)="confirmCollection(selectedOrder.id)">Confirm Collection</button>
+        </div>
+        <div class="card">
+          <h4>Delivery Instructions</h4>
+          <p>{{ selectedOrder.notes }}</p>
+        </div>
+      </div>
+  
+      <!-- Items -->
+      <h4>Order Items</h4>
+      <ul>
+        <li *ngFor="let item of selectedOrder.items">
+          {{ item.name }} — Quantity: {{ item.quantity }} x \${{ item.price.toFixed(2) }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,65 @@
+<!-- cancel-order.component.html -->
+<div class="cancel-order-container">
+    <nav class="breadcrumb">
+      <span>Menu</span> >
+      <span>Margherita Pizza</span> >
+      <span>Order Summary</span> >
+      <span>Payment</span> >
+      <span>Bill</span> >
+      <span>Tracking</span> >
+      <span class="active">Cancel</span>
+    </nav>
+  
+    <main>
+      <h1>Cancel Your Order</h1>
+  
+      <section class="order-status">
+        <p class="status">CANCELLATION IN PROGRESS</p>
+        <h2>Order #FH78945612</h2>
+        <p class="note">Please confirm your order cancellation and select a reason below.</p>
+      </section>
+  
+      <section class="order-details">
+        <h3>Order Details</h3>
+        <div class="item">
+          <span>Margherita Pizza</span>
+          <span>$15.99</span>
+        </div>
+        <div class="item">
+          <span>Garlic Bread</span>
+          <span>$3.99</span>
+        </div>
+        <div class="item total">
+          <strong>Total</strong>
+          <strong>$21.96</strong>
+        </div>
+      </section>
+  
+      <section class="cancel-reason">
+        <h3>Cancellation Reason</h3>
+        <div *ngFor="let reason of reasons" class="reason-option">
+          <label>
+            <input type="radio" name="reason" [value]="reason" [(ngModel)]="selectedReason" />
+            {{ reason }}
+          </label>
+        </div>
+      </section>
+  
+      <section class="comments">
+        <h3>Additional Comments (Optional)</h3>
+        <textarea placeholder="Please provide any additional details about your cancellation..." [(ngModel)]="comments"></textarea>
+      </section>
+  
+      <div class="buttons">
+        <button class="go-back" (click)="goBack()">Go Back</button>
+        <button class="confirm" [disabled]="!selectedReason" (click)="confirmCancellation()">Confirm Cancellation</button>
+      </div>
+  
+      <footer>
+        <p class="help">Need help? <a href="#">Contact our support team</a></p>
+        <p class="copyright">© 2023 FoodHub. All rights reserved.
+        </p>
+      </footer>
+    </main>
+  </div>
+  

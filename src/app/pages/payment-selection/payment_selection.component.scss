@@ -1,0 +1,95 @@
+.payment-selection {
+    padding: 2rem 2rem 2rem 260px;
+    background-color: #f9fafc;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1f2937;
+  
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .payment-option {
+      background: #f3f4f6;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+  
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      p {
+        color: #6b7280;
+      }
+  
+      .select-btn {
+        margin-top: 1rem;
+        background-color: #4f46e5;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #4338ca;
+        }
+      }
+    }
+  
+    .order-summary,
+    .address {
+      margin-top: 2rem;
+  
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+  
+      p {
+        margin: 0.25rem 0;
+      }
+  
+      ul {
+        list-style: disc;
+        margin-left: 1.5rem;
+      }
+    }
+  
+    .actions {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+  
+      .back-btn,
+      .proceed-btn {
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+  
+      .back-btn {
+        background-color: #e5e7eb;
+        color: #111827;
+  
+        &:hover {
+          background-color: #d1d5db;
+        }
+      }
+  
+      .proceed-btn {
+        background-color: #4f46e5;
+        color: white;
+  
+        &:hover {
+          background-color: #4338ca;
+        }
+      }
+    }
+  }
+  

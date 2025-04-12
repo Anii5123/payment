@@ -1,0 +1,98 @@
+.cancelled-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  
+    .current {
+      color: #5c27fe;
+      font-weight: 500;
+    }
+  }
+  
+  .card {
+    background-color: #f5f3ff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+  
+    .icon-box {
+      font-size: 1.8rem;
+      background: white;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    }
+  
+    h2, h3 {
+      margin: 0;
+      color: #3c3c3c;
+    }
+  
+    p {
+      margin-top: 0.3rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+  
+    .btn-primary {
+      margin-top: 0.8rem;
+    }
+  }
+  
+  .help-text {
+    margin-bottom: 1rem;
+    color: #444;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+  
+    .btn-outline {
+      border: 2px solid #5c27fe;
+      color: #5c27fe;
+      background: white;
+  
+      &:hover {
+        background: #5c27fe10;
+      }
+    }
+  
+    .btn-primary {
+      background: #5c27fe;
+      color: white;
+      border: none;
+  
+      &:hover {
+        background: #4e20da;
+      }
+    }
+  }
+  

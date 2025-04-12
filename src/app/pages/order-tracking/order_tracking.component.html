@@ -1,0 +1,75 @@
+<div class="order-tracking-container">
+
+  <!-- Main Content -->
+  <main>
+    <h1>Order Tracking</h1>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      Menu &gt; Margherita Pizza &gt; Order Summary &gt; Payment &gt; Bill &gt; <strong>Tracking</strong>
+    </nav>
+
+    <!-- Order Card -->
+    <section class="card">
+      <h2>Track Your Order</h2>
+      <div class="order-status">
+        <div>IN PROGRESS</div>
+        <div>Order #{{ order.id }}</div>
+        <p>Your order is on its way! Track its journey in real time.</p>
+      </div>
+
+      <!-- Status Cards -->
+      <div class="status-cards">
+        <div class="status completed">Pending</div>
+        <div class="status current">In Process</div>
+        <div class="status upcoming">Out for Delivery</div>
+      </div>
+
+      <!-- Delivery Status -->
+      <div>
+        <h3>Delivery Status</h3>
+        <ul class="status-list">
+          <li *ngFor="let stage of order.stages" class="status-item">
+            <div>
+              <i class="fas" [ngClass]="stage.icon"></i>
+              <span>{{ stage.name }}</span>
+            </div>
+            <span>{{ stage.time }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Delivery Details -->
+      <div>
+        <h3>Delivery Details</h3>
+        <img src="https://via.placeholder.com/300x150?text=Map" alt="Map" />
+        <div>
+          <p><strong>Delivery Partner:</strong> {{ order.deliveryPartner }}</p>
+          <p><strong>Estimated Arrival:</strong> {{ order.estimatedArrival }} ({{ order.timeRemaining }} remaining)</p>
+          <p><strong>Delivery Address:</strong> {{ order.address }}</p>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div>
+        <h3>Order Summary</h3>
+        <div *ngFor="let item of orderItems" class="item-row">
+          <span>{{ item.name }} x{{ item.quantity }}</span>
+          <span>${{ item.price.toFixed(2) }}</span>
+        </div>
+        <div class="total-row">
+          <strong>Total</strong>
+          <strong>${{ totalAmount.toFixed(2) }}</strong>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="action-buttons">
+        <button class="cancel" (click)="cancelOrder()">Cancel Order</button>
+        <button class="support">Support Chat</button>
+        <button class="back">Back to Bill</button>
+        <button class="view">View Order Details</button>
+      </div>
+    </section>
+  </main>
+</div>

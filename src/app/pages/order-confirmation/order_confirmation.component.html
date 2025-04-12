@@ -1,0 +1,36 @@
+<div class="order-confirmation">
+    <h1>Order Confirmed!</h1>
+    <p>Your order #HB28754 has been confirmed and is being prepared.</p>
+
+    <div class="order-details">
+        <h3>Order Details</h3>
+        <p>🍕 Margherita Pizza (Small, Thin Crust) - $12.99</p>
+    </div>
+
+    <div class="delivery-info">
+        <h3>Delivery Information</h3>
+        <p><strong>Address:</strong> 123 Main Street, Apt 4B, New York, NY 10001</p>
+        <p><strong>Estimated Delivery:</strong> Today, 7:15 PM - 7:30 PM</p>
+        <p><strong>Payment Method:</strong> {{ paymentMethod }}</p>
+    </div>
+
+    <div class="order-summary">
+        <h3>Order Summary</h3>
+        <p>Subtotal: $12.99</p>
+        <p>Delivery Fee: $2.99</p>
+        <p>Tax: $1.28</p>
+        <p><strong>Total: $17.26</strong></p>
+    </div>
+
+    <div class="help-buttons">
+        <button>Contact Restaurant</button>
+        <button>Support</button>
+    </div>
+
+    <div class="footer-buttons">
+        <button (click)="navigateToMenu()">Back to Menu</button>
+        <button (click)="handleTrackOrder()">Track My Order</button>
+    </div>
+
+
+</div>

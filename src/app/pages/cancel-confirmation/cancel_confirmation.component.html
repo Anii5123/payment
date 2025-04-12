@@ -1,0 +1,37 @@
+<div class="cancelled-container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <span>Orders</span>
+      <span>&gt;</span>
+      <span>Checkout</span>
+      <span>&gt;</span>
+      <span class="current">Cancelled</span>
+    </div>
+  
+    <!-- Confirmation Box -->
+    <div class="card">
+      <div class="icon-box">🔔</div>
+      <div>
+        <h2>Order Cancelled</h2>
+        <p>Your order has been successfully cancelled.</p>
+      </div>
+    </div>
+  
+    <!-- Refund Box -->
+    <div class="card">
+      <div class="icon-box">💸</div>
+      <div>
+        <h3>Refund Information</h3>
+        <p>If you made any payment, a refund will be processed within 3-5 business days.</p>
+        <button class="btn primary" (click)="refundPayment()">Refund Payment</button>
+      </div>
+    </div>
+  
+    <!-- Help -->
+    <p class="help-text">Need help with your order?</p>
+    <div class="button-group">
+        <button class="btn outline" (click)="contactSupport()">Contact Support</button>
+        <a routerLink="/" class="btn primary">Back to Home</a>
+    </div>
+  </div>
+  

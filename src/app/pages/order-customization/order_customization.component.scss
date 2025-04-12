@@ -1,0 +1,158 @@
+.customization-page {
+    padding: 2rem 2rem 2rem 260px;
+    background-color: #f9fafc;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1f2937;
+  }
+  
+  .breadcrumb {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+  }
+  
+  .customization-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .image-section img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+  }
+  
+  .details-section {
+    flex: 1;
+    min-width: 300px;
+  
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  
+    .price {
+      font-weight: 600;
+      color: #4f46e5;
+      margin-bottom: 0.25rem;
+    }
+  
+    .desc {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+  
+    h3 {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  
+    .options-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+  
+      .option-card {
+        background-color: #f3f4f6;
+        border-radius: 10px;
+        padding: 1rem;
+        cursor: pointer;
+        width: 120px;
+        text-align: center;
+        transition: background 0.2s;
+        input {
+          display: none;
+        }
+  
+        &:has(input:checked) {
+          background-color: #dbeafe;
+          border: 2px solid #3b82f6;
+        }
+  
+        small {
+          font-size: 0.75rem;
+          color: #6b7280;
+        }
+      }
+    }
+  
+    .toppings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      min-height: 80px;
+      resize: vertical;
+    }
+  
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+  
+      .counter {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+  
+        button {
+          background-color: #e5e7eb;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 1.5rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  
+    .add-btn {
+      width: 100%;
+      background-color: #4f46e5;
+      color: white;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+  
+      &:hover {
+        background-color: #4338ca;
+      }
+    }
+  }
+  /* Base styling - Tailwind is assumed, but you can add custom tweaks here */
+textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
