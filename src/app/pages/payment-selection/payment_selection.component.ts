@@ -12,8 +12,13 @@ import { CommonModule } from '@angular/common';
 export class PaymentSelectionComponent {
   constructor(private readonly router: Router) {}
 
+  // Function for Cash on Delivery
   cod() {
-    this.router.navigate(['/order-confirmation']); // Navigates to the payment selection route
+    this.router.navigate(['/order-confirmation']);
   }
-  // You can handle the actual selection in future here
+
+  // Function to handle UPI selection (Google Pay)
+  onSelectUPI() {
+    this.router.navigate(['/pay-onl']); // Navigate to the UPI payment page
+  }
 }

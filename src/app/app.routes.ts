@@ -77,5 +77,11 @@ export const routes: Routes = [
       import('./pages/admin-dashboard/admin_dashboard.component').then(
         (m) => m.AdminDashboardComponent
       ),
+  },
+  {
+    path: 'pay-onl',
+    loadComponent: () =>import('./pages/online-payment/online-payment.component').then(
+      (m) => m.OnlinePayComponent,
+    ),
   }
 ];

@@ -1,0 +1,32 @@
+.payment-container {
+  text-align: center;
+  padding: 2rem;
+
+  .payment-header {
+    margin-bottom: 1rem;
+  }
+
+  .payment-description {
+    margin-bottom: 1rem;
+  }
+
+  .google-pay-button-container {
+    margin-bottom: 2rem;
+  }
+
+  .payment-success {
+    color: green;
+    font-size: 18px;
+    margin-top: 20px;
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+  }
+}
+
+/* Utility class to toggle visibility */
+.hidden {
+  display: none;
+}

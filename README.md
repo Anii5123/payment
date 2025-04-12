@@ -1,4 +1,8 @@
-# Pay
+# for google pay
+
+npm install --save-dev @types/googlepay
+
+## Pay
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
 

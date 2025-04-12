@@ -1,60 +1,15 @@
-<div class="container">
-    <nav class="breadcrumb">
-      Home &gt; Order Summary &gt; Payment &gt; <strong>Card Details</strong>
-    </nav>
-  
-    <h2>Payment Details</h2>
-  
-    <section class="summary">
-      <h4>Order Summary</h4>
-      <p>Order #FD12345 Total Amount: <strong>$32.33</strong></p>
-    </section>
-  
-    <div class="tabs">
-      <button class="active">Credit/Debit Card</button>
-      <button>PayPal</button>
-      <button>Apple Pay</button>
-    </div>
-  
-    <form (ngSubmit)="pay()">
-      <h4>Card Information</h4>
-  
-      <input type="text" placeholder="Card Number" [(ngModel)]="card.number" name="number" />
-  
-      <div class="flex">
-        <input type="text" placeholder="MM/YY" [(ngModel)]="card.expiry" name="expiry" />
-        <input type="text" placeholder="CVV" [(ngModel)]="card.cvv" name="cvv" />
-      </div>
-  
-      <input type="text" placeholder="Cardholder Name" [(ngModel)]="card.name" name="name" />
-  
-      <h4>Billing Address</h4>
-  
-      <input type="text" placeholder="Street Address" [(ngModel)]="card.address" name="address" />
-      <div class="flex">
-        <input type="text" placeholder="City" [(ngModel)]="card.city" name="city" />
-        <input type="text" placeholder="Zip Code" [(ngModel)]="card.zip" name="zip" />
-      </div>
-  
-      <label class="save-card">
-        <input type="checkbox" [(ngModel)]="card.saveCard" name="saveCard" />
-        Save card for future payments
-      </label>
-  
-      <p class="terms">By proceeding, you agree to our Terms of Service and Privacy Policy</p>
-  
-      <div class="actions">
-        <a routerLink="/" class="back-btn">Back</a>
-        <button type="submit" class="pay-btn">Pay $32.33</button>
-      </div>
-    </form>
-  
-    <div class="logos">
-      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_2021.svg" />
-      <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/Lamborghini_Logo.svg" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" /> -->
-    </div>
-  
-    <p class="secure-text">Secure payment processing by PayEase</p>
+<div class="payment-container">
+  <h1 class="payment-header">Online Payment</h1>
+  <div class="payment-description">
+    <p>Choose your payment method:</p>
   </div>
-  
+
+  <!-- Google Pay Button Section -->
+  <div id="google-pay-button" class="google-pay-button-container"></div>
+
+  <!-- Payment Success Message -->
+  <div id="payment-success" class="payment-success hidden">
+    <h3>Payment Successful</h3>
+    <p>Your payment was processed successfully. Redirecting to the order confirmation page...</p>
+  </div>
+</div>
