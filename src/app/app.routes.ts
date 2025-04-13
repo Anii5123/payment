@@ -1,6 +1,23 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard'; // Adjust the path as per your project structure
 
 export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/login', // Default path to login if no path is provided
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
+  }
+  ,
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./components/login/login.component').then((m) => m.LoginComponent),
+  },
   {
     path: 'menu',
     loadComponent: () =>
@@ -70,6 +87,7 @@ export const routes: Routes = [
       import('./pages/employee-dashboard/employee_dashboard.component').then(
         (m) => m.EmployeeDashboardComponent
       ),
+      canActivate: [AuthGuard],
   },
   {
     path: 'admin-dashboard',
@@ -77,18 +95,18 @@ export const routes: Routes = [
       import('./pages/admin-dashboard/admin_dashboard.component').then(
         (m) => m.AdminDashboardComponent
       ),
+      canActivate: [AuthGuard],
   },
   {
     path: 'pay-onl',
-    loadComponent: () =>import('./pages/online-payment/online-payment.component').then(
-      (m) => m.OnlinePayComponent,
-    ),
+    loadComponent: () =>
+      import('./pages/online-payment/online-payment.component').then(
+        (m) => m.OnlinePayComponent
+      ),
   },
   {
     path: 'bill',
-    loadComponent: () =>import('./pages/bill/bill.component').then(
-      (m) => m.BillPageComponent,
-    ),
-  }
-
+    loadComponent: () =>
+      import('./pages/bill/bill.component').then((m) => m.BillPageComponent),
+  },
 ];

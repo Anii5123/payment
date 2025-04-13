@@ -1,0 +1,65 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>Welcome Back</h2>
+      <p>Please select your role and enter your credentials to continue.</p>
+    </div>
+
+    <div class="role-selection">
+      <button
+        [class.active]="selectedRole === 'customer'"
+        (click)="selectRole('customer')"
+      >
+        Customer
+      </button>
+      <button
+        [class.active]="selectedRole === 'employee'"
+        (click)="selectRole('employee')"
+      >
+        Employee
+      </button>
+      <button
+        [class.active]="selectedRole === 'admin'"
+        (click)="selectRole('admin')"
+      >
+        Admin
+      </button>
+    </div>
+
+    <h3 class="role-title">{{ getTitleCase(selectedRole) }} Login</h3>
+
+    <form (submit)="onLogin(emailInput.value, passwordInput.value)">
+      <div class="form-group">
+        <label for="emailInput">Email</label>
+        <input
+          type="email"
+          id="emailInput"
+          #emailInput
+          required
+          placeholder="Enter your email address"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="passwordInput">Password</label>
+        <input
+          type="password"
+          id="passwordInput"
+          #passwordInput
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="signup-text">
+      Don't have an account? <a href="#">Sign Up</a>
+    </div>
+  </div>
+</div>
