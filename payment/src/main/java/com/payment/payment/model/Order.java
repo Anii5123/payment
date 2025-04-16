@@ -34,11 +34,23 @@ public class Order {
     @Column(name = "total_amount", nullable = false)
     private Double totalAmount;
 
+    public Double gettotalAmount() {
+        return totalAmount;
+    }
+
     public enum OrderStatus {
         Pending,
         Approved,
         Canceled,
         Completed
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
     
 }

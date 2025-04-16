@@ -33,6 +33,6 @@ public class Refund {
     private LocalDateTime refundDate = LocalDateTime.now();
 
     public enum RefundStatus {
-        PENDING, PROCESSED, FAILED
+        PENDING, PROCESSING, COMPLETED, FAILED
     }
 }

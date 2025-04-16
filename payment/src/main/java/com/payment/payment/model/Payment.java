@@ -34,10 +34,10 @@ public class Payment {
     private PaymentMode paymentMode;
 
     public enum PaymentStatus {
-        PENDING, PENDING_APPROVAL, COMPLETED, FAILED
+        Pending, Pending_approval, Completed, Failed
     }
 
     public enum PaymentMode {
-        ONLINE, CASH_ON_DELIVERY
+        Online, Cash_on_delivery
     }
 }

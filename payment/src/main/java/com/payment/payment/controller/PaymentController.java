@@ -1,5 +1,6 @@
 package com.payment.payment.controller;
 
+import com.payment.payment.dto.PaymentRequestDto;
 import com.payment.payment.model.Payment;
 import com.payment.payment.service.PaymentService;
 import lombok.RequiredArgsConstructor;
@@ -15,31 +16,44 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
+    
     @PostMapping
-    public ResponseEntity<Payment> createPayment(@RequestBody Payment payment) {
-        return ResponseEntity.ok(paymentService.createPayment(payment));
+    public ResponseEntity<PaymentRequestDto> createPayment(@RequestBody PaymentRequestDto dto) {
+        Payment createdPayment = paymentService.createPayment(dto);
+        return ResponseEntity.ok(mapToDto(createdPayment));
     }
 
+   
     @GetMapping("/{id}")
-    public ResponseEntity<Payment> getPaymentById(@PathVariable Long id) {
+    public ResponseEntity<PaymentRequestDto> getPaymentById(@PathVariable Long id) {
         return paymentService.getPaymentById(id)
-                .map(ResponseEntity::ok)
+                .map(payment -> ResponseEntity.ok(mapToDto(payment)))
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    
     @GetMapping
-    public ResponseEntity<List<Payment>> getAllPayments() {
-        List<Payment> payments = paymentService.getAllPayments();
-        return payments.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(payments);
+    public ResponseEntity<List<PaymentRequestDto>> getAllPayments() {
+        return ResponseEntity.ok(paymentService.getAllPayments());
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Payment> updatePayment(@PathVariable Long id, @RequestBody Payment payment) {
-        return ResponseEntity.ok(paymentService.updatePayment(id, payment));
+    public ResponseEntity<PaymentRequestDto> updatePayment(@PathVariable Long id, @RequestBody Payment payment) {
+        Payment updatedPayment = paymentService.updatePayment(id, payment);
+        return ResponseEntity.ok(mapToDto(updatedPayment));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePayment(@PathVariable Long id) {
         return ResponseEntity.ok(paymentService.deletePayment(id));
+    }
+
+    private PaymentRequestDto mapToDto(Payment payment) {
+        return new PaymentRequestDto(
+                payment.getOrder().getUser().getUserId(),
+                payment.getOrder().getOrderStatus(),
+                payment.getPaymentMode(),
+                payment.getPaymentStatus()
+        );
     }
 }

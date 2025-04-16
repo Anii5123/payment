@@ -44,7 +44,7 @@ public class OrderService {
     public Order updateOrder(Long id, Order updatedOrder) {
         return orderRepository.findById(id).map(existingOrder -> {
             existingOrder.setOrderStatus(updatedOrder.getOrderStatus());
-            existingOrder.setTotalAmount(updatedOrder.getTotalAmount());
+            existingOrder.setTotalAmount(updatedOrder.gettotalAmount());
             existingOrder.setUser(updatedOrder.getUser());
             return orderRepository.save(existingOrder);
         }).orElseThrow(() -> new RuntimeException("Order not found with id: " + id));
