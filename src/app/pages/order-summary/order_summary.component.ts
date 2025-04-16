@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; // ✅ Add this
-
+import { Router } from '@angular/router';
+import { OrderService,OrderItem } from '../../services/OrderService.component';
 
 @Component({
   selector: 'app-order-summary',
@@ -10,22 +10,34 @@ import { Router } from '@angular/router'; // ✅ Add this
   templateUrl: './order_summary.component.html',
   styleUrls: ['./order_summary.component.scss']
 })
-export class OrderSummaryComponent {
-    constructor(private readonly router: Router) {} // ✅ Inject Router
+export class OrderSummaryComponent implements OnInit {
+  order: OrderItem | null = null;
+  
+  constructor(
+    private readonly router: Router,
+    private readonly orderService: OrderService
+  ) {}
 
-  order = {
-    image: 'assets/pizza.jpg',
-    title: 'Margherita Pizza',
-    size: 'Medium',
-    crust: 'Stuffed',
-    toppings: ['Extra Cheese', 'Mushrooms'],
-    quantity: 2,
-    instructions: 'Cut into 6 slices',
-    total: 39.98
-  };
+  ngOnInit(): void {
+    // Get the order data from the service
+    this.order = this.orderService.getOrder();
+    
+    // If no order data, redirect back to customization
+    if (!this.order) {
+      this.router.navigate(['/order-customization']);
+    }
+  }
+
+  get selectedToppings(): string[] {
+    if (!this.order) return [];
+    return this.order.toppings
+      .filter(topping => topping.selected)
+      .map(topping => topping.name);
+  }
 
   proceedToPayment() {
-    this.router.navigate(['/payment-selection']); // Navigates to the payment selection route
+    // Navigate to the payment selection page
+    this.router.navigate(['/payment-selection']);
   }
 
   goBack() {

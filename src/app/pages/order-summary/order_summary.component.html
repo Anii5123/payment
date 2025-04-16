@@ -1,41 +1,41 @@
 <div class="summary-page">
-    <div class="breadcrumb">Home / Menu / Order Summary</div>
-  
-    <div class="summary-container">
-      <div class="image-section">
-        <img [src]="order.image" alt="Pizza" />
+  <div class="breadcrumb">Home / Menu / Order Summary</div>
+
+  <div class="summary-container" *ngIf="order">
+    <div class="image-section">
+      <img [src]="order.image" alt="Pizza" />
+    </div>
+
+    <div class="details-section">
+      <h2>{{ order.title }}</h2>
+      <div class="price">Total: ₹{{ order.total.toFixed(2) }}</div>
+      <div class="desc">Here's your delicious customized pizza order:</div>
+
+      <h3>Size</h3>
+      <p>{{ order.size.name }} (₹{{ order.size.price }})</p>
+
+      <h3>Crust</h3>
+      <p>{{ order.crust }} <span *ngIf="order.crust === 'Stuffed'">(+₹10.00)</span></p>
+
+      <h3>Extra Toppings</h3>
+      <ul class="toppings-list" *ngIf="selectedToppings.length > 0">
+        <li *ngFor="let topping of selectedToppings">{{ topping }}</li>
+      </ul>
+      <p *ngIf="selectedToppings.length === 0">None</p>
+
+      <h3>Special Instructions</h3>
+      <p>{{ order.instructions || 'None' }}</p>
+
+      <h3>Quantity</h3>
+      <p>{{ order.quantity }}</p>
+
+      <div class="total-row">
+        <span>Total</span>
+        <span>₹{{ order.total.toFixed(2) }}</span>
       </div>
-  
-      <div class="details-section">
-        <h2>{{ order.title }}</h2>
-        <div class="price">Total: ${{ order.total.toFixed(2) }}</div>
-        <div class="desc">Here's your delicious customized pizza order:</div>
-  
-        <h3>Size</h3>
-        <p>{{ order.size }}</p>
-  
-        <h3>Crust</h3>
-        <p>{{ order.crust }}</p>
-  
-        <h3>Extra Toppings</h3>
-        <ul class="toppings-list">
-          <li *ngFor="let topping of order.toppings">{{ topping }}</li>
-        </ul>
-  
-        <h3>Special Instructions</h3>
-        <p>{{ order.instructions || 'None' }}</p>
-  
-        <h3>Quantity</h3>
-        <p>{{ order.quantity }}</p>
-  
-        <div class="total-row">
-          <span>Total</span>
-          <span>${{ order.total.toFixed(2) }}</span>
-        </div>
-  
-        <button class="btn back-btn" (click)="goBack()">Modify Order</button>
-        <button class="btn proceed-btn" (click)="proceedToPayment()">Proceed to Payment</button>
-      </div>
+
+      <button class="btn back-btn" (click)="goBack()">Modify Order</button>
+      <button class="btn proceed-btn" (click)="proceedToPayment()">Proceed to Payment</button>
     </div>
   </div>
-  
+</div>

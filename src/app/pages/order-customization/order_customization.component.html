@@ -1,7 +1,7 @@
 <div class="customization-page">
     <div class="customization-container">
       <div class="details-section">
-        <h2>Margherita Pizza <span class="price">${{ selectedSize.price }}</span></h2>
+        <h2>Margherita Pizza <span class="price">₹{{ selectedSize.price }}</span></h2>
         <p class="desc">Classic Italian pizza with tomato sauce, mozzarella cheese, and fresh basil.</p>
   
         <h3>Size</h3>
@@ -9,7 +9,7 @@
           <label *ngFor="let size of sizes" class="option-card">
             <input type="radio" name="size" [value]="size" [(ngModel)]="selectedSize" />
             {{ size.name }}<br />
-            <small>${{ size.price }}</small>
+            <small>₹{{ size.price }}</small>
           </label>
         </div>
   
@@ -18,7 +18,7 @@
           <label *ngFor="let crust of crusts" class="option-card">
             <input type="radio" name="crust" [value]="crust" [(ngModel)]="selectedCrust" />
             {{ crust }} <br />
-            <small *ngIf="crust === 'Stuffed'">+ $2.00</small>
+            <small *ngIf="crust === 'Stuffed'">+ ₹10.00</small>
           </label>
         </div>
   
@@ -26,7 +26,7 @@
         <div class="toppings-list">
           <label *ngFor="let topping of toppings">
             <input type="checkbox" [(ngModel)]="topping.selected" />
-            {{ topping.name }} - ${{ topping.price }}
+            {{ topping.name }} - ₹{{ topping.price }}
           </label>
         </div>
   
@@ -43,7 +43,7 @@
         </div>
   
         <div class="total-row">
-          <span>Total: ${{ total.toFixed(2) }}</span>
+          <span>Total: ₹{{ total.toFixed(2) }}</span>
         </div>
   
         <button class="add-btn" (click)="addToOrder()">Add to Order</button>

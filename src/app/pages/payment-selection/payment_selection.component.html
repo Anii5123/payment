@@ -1,20 +1,24 @@
-<div class="payment-selection">
+<div class="payment-selection" *ngIf="order">
   <div class="order-summary">
     <h2>Order Summary</h2>
     <ul>
-      <li>Margherita Pizza - 1 x $12.99</li>
-      <li>Garlic Bread - 1 x $4.99</li>
-      <li>Coca Cola - 1 x $1.99</li>
+      <li>{{ order.title }} ({{ order.size.name }}, {{ order.crust }}) - {{ order.quantity }} x ₹{{ order.total / order.quantity | number:'1.2-2' }}</li>
+      <li *ngIf="selectedToppings.length > 0">
+        <strong>Toppings:</strong>
+        <ul>
+          <li *ngFor="let topping of selectedToppings">{{ topping }}</li>
+        </ul>
+      </li>
     </ul>
-    <p>Subtotal: $19.97</p>
-    <p>Delivery Fee: $1.99</p>
-    <p><strong>Total Amount: $21.96</strong></p>
+    <p>Subtotal: ₹{{ subtotal | number:'1.2-2' }}</p>
+    <p>Delivery Fee: ₹{{ deliveryFee | number:'1.2-2' }}</p>
+    <p><strong>Total Amount: ₹{{ totalAmount | number:'1.2-2' }}</strong></p>
   </div>
 
   <div class="address">
     <h2>Delivery Address</h2>
     <p>123 Main St, Apartment 4B</p>
-    <p>New York, NY 10001</p>
+    <p>Mumbai, MH 400001</p>
   </div>
 
   <h1>Select Payment Method</h1>

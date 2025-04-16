@@ -1,5 +1,5 @@
-/* login.component.scss */
-.login-container {
+/* register.component.scss */
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,9 +8,9 @@
   padding: 20px;
 }
 
-.login-card {
+.register-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   background: white;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,7 @@
   }
 }
 
-.login-header {
+.register-header {
   margin-bottom: 2rem;
   text-align: center;
   
@@ -110,7 +110,7 @@
   }
 }
 
-.login-btn {
+.register-btn {
   display: block;
   width: 100%;
   background: linear-gradient(135deg, #6b46c1 0%, #8b5cf6 100%);
@@ -133,7 +133,7 @@
   }
 }
 
-.signup-text {
+.login-text {
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.9rem;

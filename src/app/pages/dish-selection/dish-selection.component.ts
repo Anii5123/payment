@@ -14,15 +14,15 @@ export class DishSelectionComponent {
   selectedCategory = 'All';
 
   dishes = [
-    { name: 'Margherita Pizza', price: 9.99 },
-    { name: 'Chicken Burger', price: 8.49 },
-    { name: 'Caesar Salad', price: 6.99 },
-    { name: 'Pasta Carbonara', price: 10.99 },
-    { name: 'Fish & Chips', price: 11.49 },
-    { name: 'Veggie Wrap', price: 7.99 },
-    { name: 'Chocolate Cake', price: 5.99 },
-    { name: 'Iced Coffee', price: 4.49 },
-    { name: 'Fruit Smoothie', price: 4.99 }
+    { name: 'Margherita Pizza', price: 150 },
+    { name: 'Chicken Burger', price: 120 },
+    { name: 'Caesar Salad', price: 110 },
+    { name: 'Pasta Carbonara', price: 150 },
+    { name: 'Fish & Chips', price: 160 },
+    { name: 'Veggie Wrap', price: 170 },
+    { name: 'Chocolate Cake', price: 140 },
+    { name: 'Iced Coffee', price: 140 },
+    { name: 'Fruit Smoothie', price: 170}
   ];
 
   addToOrder(dish: any) {
