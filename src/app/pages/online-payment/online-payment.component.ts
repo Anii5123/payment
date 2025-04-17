@@ -10,7 +10,7 @@ declare const google: any;
   styleUrls: ['./online-payment.component.scss']
 })
 export class OnlinePayComponent implements OnInit {
-  totalAmount: string = '21.96'; // Can be made dynamic
+  totalAmount: string = '210'; // Can be made dynamic
 
   constructor(private readonly router: Router) {}
 
@@ -62,7 +62,7 @@ export class OnlinePayComponent implements OnInit {
       transactionInfo: {
         totalPriceStatus: 'FINAL',
         totalPrice: this.totalAmount,
-        currencyCode: 'USD'
+        currencyCode: 'INR'
       },
       merchantInfo: {
         merchantName: 'Food Franchise',

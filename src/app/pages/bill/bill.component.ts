@@ -28,7 +28,7 @@ export class BillPageComponent {
     {
       orderId: 'ORD-3001',
       paymentId: 'PAY-9001',
-      amount: 45.50,
+      amount: 210,
       date: new Date('2024-04-01'),
       items: [
         { name: 'Cheese Pizza', quantity: 2, price: 12.25 },
